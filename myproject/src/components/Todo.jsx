@@ -1,22 +1,41 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 function Todo() {
+    const [tasks, settasks] = useState([]);
+    const [activity, setactivitiy] = useState('');
 
-    const [tasks, settasks]=useState("")
+ 
+const handleForm = (e) => { 
+    e.preventDefault()
+    settasks([...tasks, activity])
     console.log(tasks);
-  return (
-    <div>
-        
-<form action="Todo"></form>
-<input onChange={(e)=>{
+     }
 
-settasks(e.target.value)
+    return (
+        <div>
+            <form onSubmit={handleForm} action="Todo">
+            <input
+                onChange={(e) => {
+                    setactivitiy(e.target.value);
+                }}
+                type="text"
+            />
+            <button > Add</button>
+            </form>
 
-}}  type="text" />
-<button    type='submit'>Add</button>
+            {tasks.map((item, index)=>{
+return (
+<ul key={item.index}>
 
-    </div>
-  )
+    <li>{item}</li>
+</ul>
+
+
+)
+
+            })}
+        </div>
+    );
 }
 
-export default Todo
+export default Todo;
