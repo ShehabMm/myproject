@@ -4,14 +4,14 @@ import LIst from "./LIst";
 
 function Todo() {
     const [tasks, settasks] = useState([]);
-
+    const [activity, setactivitiy] = useState('');
 
 
 
     return (
         <div>
-            <Form tasks={tasks} settasks={settasks}   />
-            <LIst  tasks={tasks}  />
+            <Form tasks={tasks} settasks={settasks} activity={activity}  setactivitiy={setactivitiy} />
+            <LIst  tasks={tasks}  settasks={settasks} activity={activity}  setactivitiy={setactivitiy} />
         </div>
     );
 }

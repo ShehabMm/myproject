@@ -1,15 +1,14 @@
 import React from 'react'
-import  { useState } from "react";
 import styles from './form.module.css'
 
-function Form({ tasks, settasks, }) {
+function Form({ tasks, settasks,setactivitiy,activity }) {
     const handleForm = (e) => {
         e.preventDefault()
         settasks([...tasks, activity])
         console.log(tasks);
         setactivitiy("")
     }
-    const [activity, setactivitiy] = useState('');
+
 
     return (
         <div>

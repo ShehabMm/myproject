@@ -1,0 +1,29 @@
+.list{
+max-width: 500px;
+background-color: white;
+border-radius: 18px;
+box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+margin-left: auto;
+margin-right: auto;
+margin-top: 50px;
+}
+.li{
+list-style-type: none;
+list-style: none ;
+padding:0;
+}
+.mobutton{
+text-align: center;
+    padding:12px 40px;
+    border:none;
+    background-color: #f7ca18;
+    color:white;
+    max-width: 40px;
+    cursor: pointer;
+}
+.container{
+    border:2px solid red;
+display:flex;
+justify-content: center;
+
+}

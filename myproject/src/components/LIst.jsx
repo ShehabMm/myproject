@@ -1,25 +1,36 @@
-import React from 'react'
+import React from "react";
+import styles from "./list.module.css";
+function LIst({ tasks, settasks, activity, setactivitiy }) {
 
-function LIst({tasks}) {
+
+  const handledelete = (item) => {
+
+       settasks( tasks.filter((task)=>task!==item))
+
+  }
+
   return (
-    <div>
-        
+    <div className={styles.list}>
+      {tasks.map((item, i) => {
+        return (
+          <div >
+            <ul className={styles.li} key={i}>
+              <div className={styles.container}>
+                <h2>{item}</h2>
 
-        {tasks.map((item, i)=>{
-return (
-<ul key={i}>
+                <button onClick={() => {
+                  handledelete(item)
+                  console.log('deleted');
 
-    <li >{item}</li>
-</ul>
-
-
-)
-
-            })}
-
-
+                }} className={styles.mobutton}>x</button>
+                <hr style={{ border: "0.8px solid black" }} />
+              </div>
+            </ul>
+          </div>
+        );
+      })}
     </div>
-  )
+  );
 }
 
-export default LIst
+export default LIst;
