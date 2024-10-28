@@ -1,32 +1,27 @@
 import React from "react";
 import styles from "./list.module.css";
-function LIst({ tasks, settasks, activity, setactivitiy }) {
-
-
+function LIst({ settodos, todos, todo }) {
   const handledelete = (item) => {
-
-       settasks( tasks.filter((task)=>task!==item))
-
-  }
+    settodos(todos.filter((each) => each != item));
+  };
 
   return (
     <div className={styles.list}>
-      {tasks.map((item, i) => {
+      {todos.map((item, i) => {
         return (
-          <div >
-            <ul className={styles.li} key={i}>
-              <div className={styles.container}>
-                <h2>{item}</h2>
+          <ul className={styles.li} key={i}>
+            <li>{item}</li>
 
-                <button onClick={() => {
-                  handledelete(item)
-                  console.log('deleted');
-
-                }} className={styles.mobutton}>x</button>
-                <hr style={{ border: "0.8px solid black" }} />
-              </div>
-            </ul>
-          </div>
+            <button
+              onClick={() => {
+                handledelete(item);
+                console.log("deleted");
+              }}
+              className={styles.mobutton}
+            >
+              x
+            </button>
+          </ul>
         );
       })}
     </div>

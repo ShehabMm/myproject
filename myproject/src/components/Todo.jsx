@@ -3,15 +3,13 @@ import Form from "./Form";
 import LIst from "./LIst";
 
 function Todo() {
-    const [tasks, settasks] = useState([]);
-    const [activity, setactivitiy] = useState('');
-
-
+const [todo, settodo]= useState("")
+const [todos, settodos]=useState([])
 
     return (
         <div>
-            <Form tasks={tasks} settasks={settasks} activity={activity}  setactivitiy={setactivitiy} />
-            <LIst  tasks={tasks}  settasks={settasks} activity={activity}  setactivitiy={setactivitiy} />
+            <Form todo={todo} settodo={settodo}  todos={todos} settodos={settodos} />
+            <LIst  todo={todo} settodo={settodo}  todos={todos} settodos={settodos}/>
         </div>
     );
 }

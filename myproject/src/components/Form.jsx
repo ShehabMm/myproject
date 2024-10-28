@@ -1,26 +1,26 @@
 import React from 'react'
 import styles from './form.module.css'
 
-function Form({ tasks, settasks,setactivitiy,activity }) {
+function Form({ todo,settodo , todos, settodos}) {
     const handleForm = (e) => {
         e.preventDefault()
-        settasks([...tasks, activity])
-        console.log(tasks);
-        setactivitiy("")
+        settodos([...todos, todo])
+       
+        settodo("")
     }
 
 
     return (
         <div>
 
-            <form className={styles.todoForm}  onSubmit={handleForm} action="Todo">
+            <form className={styles.todoForm}  onSubmit={handleForm} >
                 <input className={styles.modernInput}
                     onChange={(e) => {
-                        setactivitiy(e.target.value);
+                        settodo(e.target.value);
                     }}
                     type="text"
-                    value={activity}
-                    placeholder='enter todo item'
+                    value={todo}
+                    placeholder='Enter Todo Item'
                 />
                 <button className={styles.modernbutton} > Add</button>
             </form>
